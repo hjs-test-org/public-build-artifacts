@@ -24,7 +24,7 @@ pipeline {
                 echo 'Registering the metadata'
                 echo 'Another echo to make the pipeline a bit more complex'
                 registerBuildArtifactMetadata(
-                    name: "artifact-hello",
+                    name: "test-artifact-1",
                     version: "1.0.1",
                     type: "docker",
                     url: "http://localhost:1111",
@@ -32,7 +32,7 @@ pipeline {
                     label: "preprod,test"
                 )
                 registerBuildArtifactMetadata(
-                    name: "artifact-world",
+                    name: "test-artifact-2",
                     version: "1.0.1",
                     type: "docker",
                     url: "http://localhost:222",
@@ -40,7 +40,7 @@ pipeline {
                     label: "nort,south"
                 )
                 registerBuildArtifactMetadata(
-                    name: "artifact-helloworld",
+                    name: "test-artifact-3",
                     version: "1.0.1",
                     type: "docker",
                     url: "http://localhost:333",
