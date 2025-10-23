@@ -1,0 +1,48 @@
+name: ghactions-run-workflow
+kind: workflow
+apiVersion: automation.cloudbees.io/v1alpha1
+
+on:
+  push:
+    branches:
+      - '**'
+      
+jobs:
+  # ghactions-run-workflow-job:
+  #   steps:
+  #     - name: ghactions run workflow
+  #       uses: cloudbees-io/ghactions-run-workflow@v2
+  #       with:
+  #         url: https://api.github.com/
+  #         token: ${{ secrets.GITHUB_ACTIONS_TOKEN }}
+  #         org-name: middesb
+  #         repo-name: middetest001
+  #         workflow-name: 'Build_Test_Deploy'
+  #         parameters: '{"param1":"this is with space"}'
+  #         branch-name: main
+
+  hjs-public-test:
+    steps:
+      - name: ghactions run workflow
+        uses: cloudbees-io/ghactions-run-workflow@v2
+        with:
+          url: https://api.github.com/
+          token: ${{ secrets.HJS_GIT_PAT }}
+          org-name: 'hjs-test-org'
+          repo-name: 'public-build-artifacts'
+          workflow-name: 'gh_build_publish'
+          branch-name: main
+
+  hjs-private-test:
+    steps:
+      - name: ghactions run workflow
+        uses: cloudbees-io/ghactions-run-workflow@v2
+        with:
+          url: https://api.github.com/
+          token: ${{ secrets.HJS_GIT_PAT }}
+          org-name: 'hjs-test-org'
+          repo-name: 'private-build-artifacts'
+          workflow-name: 'gh_build_publish'
+          branch-name: main
+          
+        
