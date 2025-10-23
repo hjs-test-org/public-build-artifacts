@@ -3,9 +3,10 @@ kind: workflow
 apiVersion: automation.cloudbees.io/v1alpha1
 
 on:
-  push:
-    branches:
-      - '**'
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - '**'
       
 jobs:
   # ghactions-run-workflow-job:
