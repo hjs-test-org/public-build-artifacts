@@ -33,16 +33,14 @@ jobs:
           workflow-name: 'gh_build_publish'
           branch-name: main
 
-  hjs-private-test:
-    steps:
-      - name: ghactions run workflow
-        uses: cloudbees-io/ghactions-run-workflow@v2
-        with:
-          url: https://api.github.com/
-          token: ${{ secrets.HJS_GIT_PAT }}
-          org-name: 'hjs-test-org'
-          repo-name: 'private-build-artifacts'
-          workflow-name: 'gh_build_publish'
-          branch-name: main
-          
-  # test
+  # hjs-private-test:
+  #   steps:
+  #     - name: ghactions run workflow
+  #       uses: cloudbees-io/ghactions-run-workflow@v2
+  #       with:
+  #         url: https://api.github.com/
+  #         token: ${{ secrets.HJS_GIT_PAT }}
+  #         org-name: 'hjs-test-org'
+  #         repo-name: 'private-build-artifacts'
+  #         workflow-name: 'gh_build_publish'
+  #         branch-name: main
